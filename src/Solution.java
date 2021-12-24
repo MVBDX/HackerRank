@@ -13,6 +13,6 @@ public class Solution {
             if (consec1 < strparts[i].length()) {consec1 = strparts[i].length();}
         }
         System.out.println(consec1);  //result
-        in.close();
+        in.close();//sdf
     }
 }
