@@ -1,20 +1,20 @@
-import java.util.Scanner;
+import java.util.*;
 
-public class Solution {
+class Solution {
     public static void main(String[] args) {
-        Scanner in = new Scanner(System.in);
-        int n = in.nextInt();
-        int consec1 = 0;
-        String strBinary = Integer.toString(n, 2);
-        // above is binary of given in in string
-        String[] strparts = strBinary.split("0");
-        // above we get all strings of ones, below find max from them
-        for (int i = 0; i < strparts.length; i++) {
-            if (consec1 < strparts[i].length()) {
-                consec1 = strparts[i].length();
-            }
+        Scanner scan = new Scanner(System.in);
+        String firstName = scan.next();
+        String lastName = scan.next();
+        int id = scan.nextInt();
+        int numScores = scan.nextInt();
+        int[] testScores = new int[numScores];
+        for (int i = 0; i < numScores; i++) {
+            testScores[i] = scan.nextInt();
         }
-        System.out.println(consec1); // result
-        in.close();
+        scan.close();
+
+        Student s = new Student(firstName, lastName, id, testScores);
+        s.printPerson();
+        System.out.println("Grade: " + s.calculate());
     }
 }
