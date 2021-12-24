@@ -1,62 +1,27 @@
+import java.io.*;
+import java.math.*;
+import java.security.*;
+import java.text.*;
 import java.util.*;
-
-abstract class Book {
-    String title;
-    String author;
-
-    Book(String title, String author) {
-        this.title = title;
-        this.author = author;
-    }
-
-    abstract void display();
-}
-
-class MyBook extends Book {
-    int price;
-
-    // Declare your class here. Do not use the 'public' access modifier.
-    // Declare the price instance variable
-
-    /**
-     * Class Constructor
-     * 
-     * @param title  The book's title.
-     * @param author The book's author.
-     * @param price  The book's price.
-     **/
-    // Write your constructor here
-    MyBook(String title, String author, int price) {
-        super(title, author);
-        this.price = price;
-    }
-
-    /**
-     * Method Name: display
-     * 
-     * Print the title, author, and price in the specified format.
-     **/
-    // Write your method here
-    @Override
-    void display() {
-        // TODO Auto-generated method stub
-        System.out.println("Title: " + this.title);
-        System.out.println("Author: " + this.author);
-        System.out.println("Price: " + this.price);
-    }
-    // End class
-}
+import java.util.concurrent.*;
+import java.util.function.*;
+import java.util.regex.*;
+import java.util.stream.*;
+import static java.util.stream.Collectors.joining;
+import static java.util.stream.Collectors.toList;
 
 public class Solution {
+    public static void main(String[] args) throws IOException {
+        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
 
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        String title = scanner.nextLine();
-        String author = scanner.nextLine();
-        int price = scanner.nextInt();
-        scanner.close();
+        String S = bufferedReader.readLine();
 
-        Book book = new MyBook(title, author, price);
-        book.display();
+        try {
+            System.out.println(Integer.parseInt(S));
+        } catch (Exception e) {
+            System.out.println("Bad String");
+        }
+
+        bufferedReader.close();
     }
 }
